@@ -2,12 +2,16 @@ import React from "react";
 
 type ButtonProps = {
   title: string;
+  className?: string;
   onClick?: () => void;
 };
 
-export function Button({ title, onClick }: ButtonProps) {
+export function Button({ title, onClick, className = "" }: ButtonProps) {
   return (
-    <button className="p-2 border rounded-md bg-gray-200" onClick={onClick}>
+    <button
+      className={`p-2 border rounded-md border-gray-200 ${className}`}
+      onClick={onClick}
+    >
       {title}
     </button>
   );
