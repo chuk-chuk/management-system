@@ -28,8 +28,8 @@ export const groups = [
 export const users = [
   {
     id: "1a6e0804-2bd0-4672-b79d-d97027f9071u",
-    first_name: "Anna",
-    last_name: "Smith",
+    firstName: "Anna",
+    lastName: "Smith",
     bio: "Lovely, friendly person",
     groups: [
       "1a6e0804-2bd0-4672-b79d-d97027f9071g",
@@ -38,15 +38,15 @@ export const users = [
   },
   {
     id: "2a6e0804-2bd0-4672-b79d-d97027f9071u",
-    first_name: "Lea",
-    last_name: "Logan",
+    firstName: "Lea",
+    lastName: "Logan",
     bio: "Hardworking individual",
     groups: ["1a6e0804-2bd0-4672-b79d-d97027f9071g"],
   },
   {
     id: "3a6e0804-2bd0-4672-b79d-d97027f9071u",
-    first_name: "Adam",
-    last_name: "Great",
+    firstName: "Adam",
+    lastName: "Great",
     bio: "Freelance worker, love sports",
     groups: ["1a6e0804-2bd0-4672-b79d-d97027f9071g"],
   },
