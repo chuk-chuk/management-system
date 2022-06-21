@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/button/Button";
 import { users } from "../../data";
 
 export function Users() {
@@ -19,9 +20,7 @@ export function Users() {
           </div>
         ))}
       </div>
-      <button className="border" onClick={() => navigate("/")}>
-        Back
-      </button>
+      <Button title="Back" onClick={() => navigate("/")} />
     </main>
   );
 }
