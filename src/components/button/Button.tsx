@@ -7,7 +7,7 @@ type ButtonProps = {
 
 export function Button({ title, onClick }: ButtonProps) {
   return (
-    <button className="border" onClick={onClick}>
+    <button className="p-2 border" onClick={onClick}>
       {title}
     </button>
   );
