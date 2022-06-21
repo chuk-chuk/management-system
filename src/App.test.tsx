@@ -1,9 +1,49 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { createMemoryHistory } from "history";
+import { Router } from "react-router-dom";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from "./App";
+
+describe("App", () => {
+  it("renders home page with the correct heading", () => {
+    const history = createMemoryHistory();
+    render(
+      <Router location={history.location} navigator={history}>
+        <App />
+      </Router>
+    );
+    expect(screen.getByText(/User Management System/i)).toBeInTheDocument();
+  });
+
+  it("sets history location to /users", () => {
+    const history = createMemoryHistory();
+    render(
+      <Router location={history.location} navigator={history}>
+        <App />
+      </Router>
+    );
+
+    const usersLink = screen.getByText("Users");
+
+    expect(usersLink).toBeInTheDocument();
+    userEvent.click(usersLink);
+    expect(history.location.pathname).toBe("/users");
+  });
+
+  it("sets history location to /groups", () => {
+    const history = createMemoryHistory();
+    render(
+      <Router location={history.location} navigator={history}>
+        <App />
+      </Router>
+    );
+
+    const usersLink = screen.getByText("Groups");
+
+    expect(usersLink).toBeInTheDocument();
+    userEvent.click(usersLink);
+    expect(history.location.pathname).toBe("/groups");
+  });
 });

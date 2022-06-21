@@ -7,7 +7,7 @@ export function Users() {
   const navigate = useNavigate();
 
   return (
-    <main className="m-12">
+    <main data-testid="users-page" className="m-12">
       <h2 className="mb-8">Our Users</h2>
       <div className="mb-8">
         {users.map((user) => (
