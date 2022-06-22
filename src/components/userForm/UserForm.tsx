@@ -66,7 +66,10 @@ export function UserForm({ onClose }: UserFormProps) {
         placeholder="Short bio ..."
         className="border mb-4 p-2 rounded-md"
       />
-      <Button title="Save" />
+      <Button
+        title="Save"
+        className="bg-blue-50 border-blue-100 text-blue-500"
+      />
     </form>
   );
 }

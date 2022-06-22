@@ -22,7 +22,11 @@ export function UserDetails() {
     <div className="m-24">
       {userId && (
         <>
-          <Button title="Back" onClick={() => navigate("/")} className="mb-8" />
+          <Button
+            title="Back"
+            onClick={() => navigate("/users")}
+            className="mb-8"
+          />
           <div className="mb-6">
             <p>{userInfo?.firstName}</p>
             <p>About me: {userInfo?.bio}</p>

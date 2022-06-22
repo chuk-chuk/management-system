@@ -39,7 +39,7 @@ export function Users() {
           <UserForm onClose={() => setShowAddModal(false)} />
         </Modal>
       )}
-      <Button title="Add User" onClick={() => setShowAddModal(true)} />
+      <Button title="New User" onClick={() => setShowAddModal(true)} />
     </main>
   );
 }

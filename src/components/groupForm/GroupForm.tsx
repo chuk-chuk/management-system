@@ -1,9 +1,13 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from "react";
-import { Group } from "../../pages/groups/Groups.types";
+import React, {
+  ChangeEvent,
+  SyntheticEvent,
+  useContext,
+  useState,
+} from "react";
+import { GroupContext, GroupContextType } from "../../context/GroupContext";
 import { Button } from "../button/Button";
 
 type GroupFormProps = {
-  addGroup: (user: Group) => void;
   onClose: () => void;
 };
 
@@ -14,14 +18,15 @@ const initialGroupState = {
   users: [],
 };
 
-export function GroupForm({ addGroup, onClose }: GroupFormProps) {
-  const [groupState, setgroupState] = useState(initialGroupState);
+export function GroupForm({ onClose }: GroupFormProps) {
+  const { addGroup } = useContext(GroupContext) as GroupContextType;
+  const [groupState, setGroupState] = useState(initialGroupState);
 
   const handleOnChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => {
     const value = event.target.value;
-    setgroupState({
+    setGroupState({
       ...groupState,
       [event.target.name]: value,
     });
@@ -30,7 +35,7 @@ export function GroupForm({ addGroup, onClose }: GroupFormProps) {
   const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     addGroup(groupState);
-    setgroupState(initialGroupState);
+    setGroupState(initialGroupState);
     onClose();
   };
 
@@ -51,7 +56,10 @@ export function GroupForm({ addGroup, onClose }: GroupFormProps) {
         placeholder="Short description ..."
         className="border mb-4 p-2 rounded-md"
       />
-      <Button title="Save" />
+      <Button
+        title="Save"
+        className="bg-blue-50 border-blue-100 text-blue-500"
+      />
     </form>
   );
 }

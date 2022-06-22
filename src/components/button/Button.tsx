@@ -9,7 +9,7 @@ type ButtonProps = {
 export function Button({ title, onClick, className = "" }: ButtonProps) {
   return (
     <button
-      className={`p-2 border rounded-md border-gray-200 ${className}`}
+      className={`p-2 border rounded-md border-gray-300 ${className}`}
       onClick={onClick}
     >
       {title}

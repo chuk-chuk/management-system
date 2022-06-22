@@ -21,7 +21,7 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         firstName: user.firstName,
         lastName: user.lastName,
         bio: user.bio,
-        groups: [],
+        groups: user.groups,
       };
       setUsersList([...usersList, newUser]);
     },
