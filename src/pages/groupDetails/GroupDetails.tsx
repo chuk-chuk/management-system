@@ -55,7 +55,7 @@ export function GroupDetails() {
   });
 
   return (
-    <div className="m-24">
+    <div className="m-24 p-8 bg-white rounded-lg">
       {groupId && (
         <>
           <Button
@@ -78,7 +78,7 @@ export function GroupDetails() {
                     </div>
                     <Button
                       title="x"
-                      className="py-0 mr-2 bg-red-200 text-red-500 border-red-300 self-end"
+                      className="py-0 mr-2 bg-white text-red-400 border-red-400 self-end"
                       onClick={() => handleRemoveUser(userId)}
                     />
                   </div>

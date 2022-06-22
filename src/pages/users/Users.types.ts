@@ -3,5 +3,5 @@ export type User = {
   firstName: string;
   lastName: string;
   bio: string;
-  groups?: string[];
+  groups: string[];
 };

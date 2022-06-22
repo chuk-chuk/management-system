@@ -11,21 +11,21 @@ export function Users() {
   const { usersList } = useContext(UserContext) as UserContextType;
 
   return (
-    <main data-testid="users-page" className="m-24">
+    <main data-testid="users-page" className="m-24 p-8 bg-white rounded-lg">
       <Button title="Back" onClick={() => navigate("/")} className="mb-8" />
       <div className="flex flex-wrap mb-8 border rounded-md">
         {usersList.length > 0 ? (
           usersList.map((user) => (
             <div
               key={user.id}
-              className="flex flex-col items-center justify-center w-48 h-48 m-4 rounded-full border bg-blue-400 text-white"
+              className="flex flex-col items-center justify-center w-36 h-36 m-4 rounded-3xl border bg-blue-400 text-white"
             >
               <p>{user.firstName}</p>
               <p className="mb-4">{user.lastName}</p>
               <Button
-                title="more ..."
+                title="read more ..."
                 onClick={() => navigate(`/users/${user.id}`)}
-                className="bg-blue-800 px-1 py-0"
+                className="bg-blue-500 px-1 py-0"
               />
             </div>
           ))
@@ -39,7 +39,11 @@ export function Users() {
           <UserForm onClose={() => setShowAddModal(false)} />
         </Modal>
       )}
-      <Button title="New User" onClick={() => setShowAddModal(true)} />
+      <Button
+        title="New User"
+        onClick={() => setShowAddModal(true)}
+        className="hover:bg-blue-100"
+      />
     </main>
   );
 }

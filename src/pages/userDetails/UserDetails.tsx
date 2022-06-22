@@ -19,7 +19,7 @@ export function UserDetails() {
   const userInfo = usersList.find((user) => user.id === userId);
 
   return (
-    <div className="m-24">
+    <div className="m-24 p-8 bg-white rounded-lg">
       {userId && (
         <>
           <Button
@@ -28,8 +28,8 @@ export function UserDetails() {
             className="mb-8"
           />
           <div className="mb-6">
-            <p>{userInfo?.firstName}</p>
-            <p>About me: {userInfo?.bio}</p>
+            <p className="mb-2">{userInfo?.firstName}</p>
+            <p className="mb-2">About me: {userInfo?.bio}</p>
             {userInfo?.groups && userInfo?.groups?.length > 0 ? (
               <div>
                 {userInfo?.groups.map((group) => (
