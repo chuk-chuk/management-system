@@ -25,7 +25,7 @@ describe("App", () => {
       </Router>
     );
 
-    const usersLink = screen.getByText("Users");
+    const usersLink = screen.getByText("EXPLORE USERS");
 
     expect(usersLink).toBeInTheDocument();
     userEvent.click(usersLink);
@@ -40,7 +40,7 @@ describe("App", () => {
       </Router>
     );
 
-    const usersLink = screen.getByText("Groups");
+    const usersLink = screen.getByText("EXPLORE GROUPS");
 
     expect(usersLink).toBeInTheDocument();
     userEvent.click(usersLink);

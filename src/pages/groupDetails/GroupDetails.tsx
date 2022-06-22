@@ -55,7 +55,7 @@ export function GroupDetails() {
   });
 
   return (
-    <div className="m-24 p-8 bg-white rounded-lg">
+    <div data-testid="group-details" className="m-24 p-8 bg-white rounded-lg">
       {groupId && (
         <>
           <Button
