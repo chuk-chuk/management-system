@@ -1,9 +1,14 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from "react";
+import React, {
+  ChangeEvent,
+  SyntheticEvent,
+  useContext,
+  useState,
+} from "react";
+import { UserContext, UserContextType } from "../../context/UserContext";
 import { User } from "../../pages/users/Users.types";
 import { Button } from "../button/Button";
 
 type UserFormProps = {
-  addUser: (user: User) => void;
   onClose: () => void;
 };
 
@@ -15,8 +20,9 @@ const initialUserState = {
   groups: [],
 };
 
-export function UserForm({ addUser, onClose }: UserFormProps) {
-  const [userState, setUserState] = useState(initialUserState);
+export function UserForm({ onClose }: UserFormProps) {
+  const { addUser } = useContext(UserContext) as UserContextType;
+  const [userState, setUserState] = useState<User>(initialUserState);
 
   const handleOnChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
