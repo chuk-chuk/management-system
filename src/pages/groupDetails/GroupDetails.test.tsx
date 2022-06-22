@@ -42,5 +42,6 @@ describe("GroupDetails", () => {
     );
 
     expect(screen.getByTestId("group-details")).toBeInTheDocument();
+    q;
   });
 });
