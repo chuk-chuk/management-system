@@ -26,6 +26,15 @@ export function UserDetails() {
           <div className="mb-6">
             <p>{userInfo?.firstName}</p>
             <p>About me: {userInfo?.bio}</p>
+            {userInfo?.groups && userInfo?.groups?.length > 0 ? (
+              <div>
+                {userInfo?.groups.map((group) => (
+                  <p>{group}</p>
+                ))}
+              </div>
+            ) : (
+              <p>No groups yet</p>
+            )}
           </div>
           <Button
             title="Delete this user"
