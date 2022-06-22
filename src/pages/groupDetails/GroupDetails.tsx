@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../../components/button/Button";
+import { Modal } from "../../components/modal/Modal";
+import { SelectUser } from "../../components/selectUser/SelectUser";
 import { GroupContext, GroupContextType } from "../../context/GroupContext";
 import { UserContext, UserContextType } from "../../context/UserContext";
 
@@ -8,6 +10,7 @@ export function GroupDetails() {
   const { groupId } = useParams();
   const navigate = useNavigate();
   const [deleteMessage, setDeleteMessage] = useState("");
+  const [addUserModal, setAddUserModal] = useState(false);
   const { groupsList, setGroupsList } = useContext(
     GroupContext
   ) as GroupContextType;
@@ -47,9 +50,9 @@ export function GroupDetails() {
     }
   };
 
-  const handleAddUser = () => {
-    console.log("user added");
-  };
+  const usersCanBeAdded = usersList.filter((el) => {
+    return !groupInfo?.users?.includes(el.id);
+  });
 
   return (
     <div className="m-24">
@@ -86,10 +89,19 @@ export function GroupDetails() {
             )}
           </div>
           <p className="text-red-200 mb-2">{deleteMessage}</p>
+          {addUserModal && (
+            <Modal onClose={() => setAddUserModal(false)}>
+              <SelectUser
+                onClose={() => setAddUserModal(false)}
+                users={usersCanBeAdded}
+                groupId={groupId}
+              />
+            </Modal>
+          )}
           <Button
             title="Add group user"
             className="bg-blue-400 text-white mr-4"
-            onClick={() => handleAddUser()}
+            onClick={() => setAddUserModal(true)}
           />
           <Button
             title="Delete this group"
