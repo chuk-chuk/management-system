@@ -5,6 +5,7 @@ import App from "./App";
 import { UserProvider } from "./context/UserContext";
 import { Groups } from "./pages/groups/Groups";
 import { Users } from "./pages/users/Users";
+import { UserDetails } from "./pages/userDetails/UserDetails";
 import "./index.css";
 
 const root = ReactDOM.createRoot(
@@ -18,6 +19,8 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="users" element={<Users />} />
           <Route path="groups" element={<Groups />} />
+          <Route path="groups" element={<Groups />} />
+          <Route path="users/:userId" element={<UserDetails />} />
           <Route
             path="*"
             element={

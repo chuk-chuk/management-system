@@ -6,6 +6,7 @@ import { User } from "../pages/users/Users.types";
 export type UserContextType = {
   usersList: User[];
   addUser: (user: User) => void;
+  setUsersList: (users: User[]) => void;
 };
 
 const UserContext = createContext<UserContextType | null>(null);
@@ -28,7 +29,7 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   );
 
   return (
-    <UserContext.Provider value={{ usersList, addUser }}>
+    <UserContext.Provider value={{ usersList, addUser, setUsersList }}>
       {children}
     </UserContext.Provider>
   );

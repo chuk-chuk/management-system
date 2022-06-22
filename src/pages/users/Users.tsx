@@ -18,11 +18,15 @@ export function Users() {
           usersList.map((user) => (
             <div
               key={user.id}
-              onClick={() => console.log(user)}
               className="flex flex-col items-center justify-center w-48 h-48 m-4 rounded-full border bg-blue-400 text-white"
             >
               <p>{user.firstName}</p>
-              <p>{user.lastName}</p>
+              <p className="mb-4">{user.lastName}</p>
+              <Button
+                title="more ..."
+                onClick={() => navigate(`/users/${user.id}`)}
+                className="bg-blue-800 px-1 py-0"
+              />
             </div>
           ))
         ) : (
