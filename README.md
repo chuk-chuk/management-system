@@ -1,7 +1,17 @@
-# Getting started with the application
+## User stories
 
-This project was bootstrapped with Create React App.
-Technologies used:
+- I can see a list of existing users
+- I can see a list of existing groups
+- I can create users
+- I can create groups
+- I can assign users to a group they aren’t already part of
+- I can remove users from a group
+- I can delete groups when they no longer have members
+- I can delete users
+- I can see "group detail page" where it is possible to see a list of all users in a given group
+- I can see "user detail page" where it is possible to see a list of all groups ids
+
+## Technologies used:
 
 - Typescript
 - React
@@ -27,18 +37,5 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.
-
-## User stories
-
-- I can see a list of existing users
-- I can see a list of existing groups
-- I can create users
-- I can create groups
-- I can assign users to a group they aren’t already part of
-- I can remove users from a group
-- I can delete groups when they no longer have members
-- I can delete users
-- I can see "group detail page" where it is possible to see a list of all users in a given group
-- I can see "user detail page" where it is possible to see a list of all groups ids
 
 Notes: On the `UserDetails` page you will find the ids of the groups, logic for displaying groups names and removing items is very similar to the one in the `GroupDetails` page. See for reference.
